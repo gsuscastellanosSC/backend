@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:mysql://54.173.221.22:3306/db_api_poll
+    username: root
+    password: example
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    
