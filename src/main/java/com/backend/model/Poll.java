@@ -1,4 +1,4 @@
-package com.backend.poll.model;
+package com.backend.model;
 
 import java.io.Serializable;
 
@@ -8,11 +8,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.backend.poll.util.Constant;
+import com.backend.util.Constant;
 
 @Entity
-@Table(name = Constant.ENCUESTA)
-public class Encuesta implements Serializable {
+@Table(name = Constant.POLL)
+public class Poll implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

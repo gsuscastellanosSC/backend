@@ -1,4 +1,4 @@
-package com.backend.poll.util;
+package com.backend.util;
 
 public class Constant {
 
@@ -25,10 +25,10 @@ public class Constant {
 	public static final String SLASH_QUESTIONS_SLASH_BRACKET_ID_BRACKET = SLASH + QUESTIONS + SLASH
 			+ BRACKET_ID_BRACKET;
 
-	public static final String ENCUESTA = "encuesta";
-	public static final String ENCUESTAS = ENCUESTA + S;
-	public static final String SLASH_ENCUESTAS = SLASH + ENCUESTAS;
-	public static final String SLASH_ENCUESTAS_SLASH_BRACKET_ID_BRACKET = SLASH + ENCUESTAS + SLASH
+	public static final String POLL = "poll";
+	public static final String POLLS = POLL + S;
+	public static final String SLASH_POLLS = SLASH + POLLS;
+	public static final String SLASH_POLLS_SLASH_BRACKET_ID_BRACKET = SLASH + POLLS + SLASH
 			+ BRACKET_ID_BRACKET;
 
 }

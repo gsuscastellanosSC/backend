@@ -1,4 +1,4 @@
-package com.backend.poll.util;
+package com.backend.util;
 
 public class BackendPollUtil {
 

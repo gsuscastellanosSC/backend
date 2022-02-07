@@ -1,4 +1,4 @@
-package com.backend.poll.model;
+package com.backend.model;
 
 import java.io.Serializable;
 
@@ -8,7 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.backend.poll.util.Constant;
+import com.backend.util.Constant;
 
 @Entity
 @Table(name = Constant.CLIENT)

@@ -1,4 +1,4 @@
-package com.backend.poll.service.impl;
+package com.backend.service.impl;
 
 import java.util.List;
 
@@ -6,10 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.backend.poll.dao.QuestionDAO;
-import com.backend.poll.model.Question;
-import com.backend.poll.service.QuestionService;
-import com.backend.poll.util.Constant;
+import com.backend.dao.QuestionDAO;
+import com.backend.model.Question;
+import com.backend.service.QuestionService;
+import com.backend.util.Constant;
 
 @Service
 public class QuestionServiceImpl implements QuestionService {

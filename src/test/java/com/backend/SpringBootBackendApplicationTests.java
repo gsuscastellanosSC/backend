@@ -1,10 +1,10 @@
-package com.backend.poll;
+package com.backend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringBootBackendPollApplicationTests {
+class SpringBootBackendApplicationTests {
 
 	@Test
 	void contextLoads() {

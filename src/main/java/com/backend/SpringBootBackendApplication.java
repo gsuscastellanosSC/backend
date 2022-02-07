@@ -1,13 +1,13 @@
-package com.backend.poll;
+package com.backend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringBootBackendPollApplication {
+public class SpringBootBackendApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootBackendPollApplication.class, args);
+		SpringApplication.run(SpringBootBackendApplication.class, args);
 	}
 
 }

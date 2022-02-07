@@ -1,4 +1,4 @@
-package com.backend.poll.controller;
+package com.backend.controller;
 
 import java.util.List;
 
@@ -12,10 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.backend.poll.model.Question;
-
-import com.backend.poll.service.QuestionService;
-import com.backend.poll.util.Constant;
+import com.backend.model.Question;
+import com.backend.service.QuestionService;
+import com.backend.util.Constant;
 
 @RestController
 @CrossOrigin(origins = { Constant.ASTERISK })

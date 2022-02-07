@@ -1,8 +1,8 @@
-package com.backend.poll.service;
+package com.backend.service;
 
 import java.util.List;
 
-import com.backend.poll.model.Client;
+import com.backend.model.Client;
 
 public interface ClientService {
 
