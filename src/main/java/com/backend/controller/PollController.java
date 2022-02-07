@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.backend.model.Poll;
+import com.backend.service.ClientService;
 import com.backend.service.PollService;
+import com.backend.service.QuestionService;
 import com.backend.util.Constant;
 
 @RestController
@@ -24,9 +26,15 @@ public class PollController {
 
 	@Autowired
 	private PollService pollService;
+	@Autowired
+	private ClientService clientService;
+	@Autowired
+	private QuestionService questionService;
 
 	@PostMapping(Constant.SLASH_POLLS)
 	public Poll save(@RequestBody Poll poll) {
+		clientService.save(poll.getClient());
+		questionService.save(poll.getQuestion());
 		return pollService.save(poll);
 	}
 
