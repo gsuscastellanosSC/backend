@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import com.backend.util.Constant;
+import com.backend.util.QuestionTypeEnum;
 
 @Entity
 @Table(name = Constant.QUESTION)
@@ -19,7 +20,7 @@ public class Question implements Serializable {
 	private Integer id;
 	private String answer;
 	private String question;
-	private String type;
+	private QuestionTypeEnum type;
 
 	private static final long serialVersionUID = Constant.ONE_LONG;
 
@@ -47,11 +48,11 @@ public class Question implements Serializable {
 		this.question = question;
 	}
 
-	public String getType() {
+	public QuestionTypeEnum getType() {
 		return type;
 	}
 
-	public void setType(String type) {
+	public void setType(QuestionTypeEnum type) {
 		this.type = type;
 	}
 

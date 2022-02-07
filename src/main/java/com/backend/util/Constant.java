@@ -28,7 +28,12 @@ public class Constant {
 	public static final String POLL = "poll";
 	public static final String POLLS = POLL + S;
 	public static final String SLASH_POLLS = SLASH + POLLS;
-	public static final String SLASH_POLLS_SLASH_BRACKET_ID_BRACKET = SLASH + POLLS + SLASH
+	public static final String SLASH_POLLS_SLASH_BRACKET_ID_BRACKET = SLASH + POLLS + SLASH + BRACKET_ID_BRACKET;
+
+	public static final String RESTAURANT = "restaurant";
+	public static final String RESTAURANTS = RESTAURANT + S;
+	public static final String SLASH_RESTAURANTS = SLASH + RESTAURANTS;
+	public static final String SLASH_RESTAURANTS_SLASH_BRACKET_ID_BRACKET = SLASH + RESTAURANTS + SLASH
 			+ BRACKET_ID_BRACKET;
 
 }
