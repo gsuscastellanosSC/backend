@@ -25,8 +25,9 @@ public class Poll implements Serializable {
 	private String name;
 
 	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "poll_question", joinColumns = { @JoinColumn(name = "poll_id") }, inverseJoinColumns = {
-			@JoinColumn(name = "question_id") })
+	@JoinTable(name = Constant.POLL_UNDERSCORE_QUESTION, joinColumns = {
+			@JoinColumn(name = Constant.POLL_UNDERSCORE_ID) }, inverseJoinColumns = {
+					@JoinColumn(name = Constant.QUESTION_UNDERSCORE_ID) })
 	private List<Question> questions = new ArrayList<>();
 
 	private static final long serialVersionUID = Constant.ONE_LONG;

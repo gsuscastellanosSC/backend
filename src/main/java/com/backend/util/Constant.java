@@ -44,7 +44,9 @@ public class Constant {
 
 	public static final String QUESTION_UNDERSCORE_ID = QUESTION + UNDERSCORE + ID;
 	public static final String ANSWER_UNDERSCORE_ID = ANSWER + UNDERSCORE + ID;
-
 	public static final String QUESTION_UNDERSCORE_ANSWER = QUESTION + UNDERSCORE + ANSWER;
+
+	public static final String POLL_UNDERSCORE_QUESTION = POLL + UNDERSCORE + QUESTION;
+	public static final String POLL_UNDERSCORE_ID = POLL + UNDERSCORE + ID;
 
 }
