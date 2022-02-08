@@ -43,10 +43,10 @@ public class AnswerController {
 	@PutMapping(Constant.SLASH_ANSWERS_SLASH_BRACKET_ID_BRACKET)
 	public Answer update(@RequestBody Answer answer, @PathVariable Integer id) {
 
-		Answer answerServiceUpdated = answerService.findById(id);
-		answerServiceUpdated.setAnswer(answer.getAnswer());
+		Answer answerUpdated = answerService.findById(id);
+		answerUpdated.setAnswer(answer.getAnswer());
 
-		return answerService.save(answerServiceUpdated);
+		return answerService.save(answerUpdated);
 	}
 
 	@DeleteMapping(Constant.SLASH_ANSWERS_SLASH_BRACKET_ID_BRACKET)
