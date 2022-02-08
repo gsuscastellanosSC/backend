@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.backend.model.Answer;
 import com.backend.model.Poll;
 import com.backend.model.Question;
 import com.backend.service.PollService;
@@ -37,7 +38,7 @@ public class PollController {
 		Poll pollAns = pollService.save(poll);
 		List<Poll> pollList = new ArrayList<>();
 
-		List<Question> questions = poll.getQuestion();
+		List<Question> questions = poll.getQuestions();
 		List<Question> questionsSave = new ArrayList<>();
 
 		for (Question question : questions) {
@@ -65,20 +66,20 @@ public class PollController {
 	public Poll update(@RequestBody Poll poll, @PathVariable Integer id) {
 
 		Poll encuestaUpdated = pollService.findById(poll.getPoll_id());
-
-		encuestaUpdated.setName(poll.getName());
 		Question questionUpdated = new Question();
 		List<Question> questionList = new ArrayList<>();
-		List<Question> questions = poll.getQuestion();
+		List<Question> questions = poll.getQuestions();
 
+		encuestaUpdated.setName(poll.getName());
 		for (Question questionIndex : questions) {
 			questionUpdated.setQuestion(questionIndex.getQuestion());
-			questionUpdated.setAnswer(questionIndex.getAnswer());
+			questionUpdated.setAnswers(questionIndex.getAnswers());
 			questionUpdated.setType(questionIndex.getType());
 			questionList.add(questionService.save(questionUpdated));
 
 		}
 		encuestaUpdated.setQuestion(questionList);
+
 		return pollService.save(encuestaUpdated);
 	}
 

@@ -59,7 +59,7 @@ public class QuestionController {
 		Question questionUpdated = questionService.findById(id);
 
 		questionUpdated.setQuestion(question.getQuestion());
-		questionUpdated.setAnswer(question.getAnswer());
+		questionUpdated.setAnswers(question.getAnswers());
 		questionUpdated.setType(question.getType());
 
 		return questionService.save(questionUpdated);

@@ -1,5 +1,6 @@
 package com.backend.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +17,7 @@ import com.backend.util.Constant;
 
 @Entity
 @Table(name = Constant.POLL)
-public class Poll {
+public class Poll implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,7 +27,9 @@ public class Poll {
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "poll_question", joinColumns = { @JoinColumn(name = "poll_id") }, inverseJoinColumns = {
 			@JoinColumn(name = "question_id") })
-	private List<Question> question = new ArrayList<>();
+	private List<Question> questions = new ArrayList<>();
+
+	private static final long serialVersionUID = Constant.ONE_LONG;
 
 	public Poll() {
 
@@ -48,12 +51,12 @@ public class Poll {
 		this.name = name;
 	}
 
-	public List<Question> getQuestion() {
-		return question;
+	public List<Question> getQuestions() {
+		return questions;
 	}
 
 	public void setQuestion(List<Question> question) {
-		this.question = question;
+		this.questions = question;
 	}
 
 }

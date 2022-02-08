@@ -9,6 +9,7 @@ public class Constant {
 	public static final String ASTERISK = "*";
 	public static final String API = "api";
 	public static final String SLASH = "/";
+	public static final String UNDERSCORE = "_";
 	public static final String S = "s";
 	public static final String ID = "id";
 	public static final String BRACKET_ID_BRACKET = "{" + ID + "}";
@@ -35,5 +36,15 @@ public class Constant {
 	public static final String SLASH_RESTAURANTS = SLASH + RESTAURANTS;
 	public static final String SLASH_RESTAURANTS_SLASH_BRACKET_ID_BRACKET = SLASH + RESTAURANTS + SLASH
 			+ BRACKET_ID_BRACKET;
+
+	public static final String ANSWER = "answer";
+	public static final String ANSWERS = ANSWER + S;
+	public static final String SLASH_ANSWERS = SLASH + ANSWERS;
+	public static final String SLASH_ANSWERS_SLASH_BRACKET_ID_BRACKET = SLASH + ANSWERS + SLASH + BRACKET_ID_BRACKET;
+
+	public static final String QUESTION_UNDERSCORE_ID = QUESTION + UNDERSCORE + ID;
+	public static final String ANSWER_UNDERSCORE_ID = ANSWER + UNDERSCORE + ID;
+
+	public static final String QUESTION_UNDERSCORE_ANSWER = QUESTION + UNDERSCORE + ANSWER;
 
 }
