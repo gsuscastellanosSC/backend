@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import com.backend.util.Constant;
 
@@ -24,6 +25,10 @@ public class Poll implements Serializable {
 	private Integer poll_id;
 	private String name;
 
+	@ManyToOne(optional = false)
+	@JoinColumn(name = Constant.RESTAURANT_UNDERSCORE_ID)
+	private Restaurant restaurant;
+
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = Constant.POLL_UNDERSCORE_QUESTION, joinColumns = {
 			@JoinColumn(name = Constant.POLL_UNDERSCORE_ID) }, inverseJoinColumns = {
@@ -31,10 +36,6 @@ public class Poll implements Serializable {
 	private List<Question> questions = new ArrayList<>();
 
 	private static final long serialVersionUID = Constant.ONE_LONG;
-
-	public Poll() {
-
-	}
 
 	public Integer getPoll_id() {
 		return poll_id;
@@ -52,12 +53,20 @@ public class Poll implements Serializable {
 		this.name = name;
 	}
 
+	public Restaurant getRestaurant() {
+		return restaurant;
+	}
+
+	public void setRestaurant(Restaurant restaurant) {
+		this.restaurant = restaurant;
+	}
+
 	public List<Question> getQuestions() {
 		return questions;
 	}
 
-	public void setQuestion(List<Question> question) {
-		this.questions = question;
+	public void setQuestions(List<Question> questions) {
+		this.questions = questions;
 	}
 
 }

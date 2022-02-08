@@ -43,7 +43,7 @@ public class RestaurantController {
 	@PutMapping(Constant.SLASH_RESTAURANTS_SLASH_BRACKET_ID_BRACKET)
 	public Restaurant update(@RequestBody Restaurant restaurant, @PathVariable Integer id) {
 
-		Restaurant restaurantUpdated = restaurantService.findById(restaurant.getId());
+		Restaurant restaurantUpdated = restaurantService.findById(id);
 		restaurantUpdated.setName(restaurant.getName());
 
 		return restaurantService.save(restaurantUpdated);

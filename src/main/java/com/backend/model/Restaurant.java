@@ -16,17 +16,17 @@ public class Restaurant implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Integer restaurant_id;
 	private String name;
 
 	private static final long serialVersionUID = Constant.ONE_LONG;
 
-	public Integer getId() {
-		return id;
+	public Integer getRestaurant_id() {
+		return restaurant_id;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setRestaurant_id(Integer restaurant_id) {
+		this.restaurant_id = restaurant_id;
 	}
 
 	public String getName() {
