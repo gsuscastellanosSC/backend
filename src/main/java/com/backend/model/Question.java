@@ -1,35 +1,30 @@
 package com.backend.model;
 
-import java.io.Serializable;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
 import com.backend.util.Constant;
 import com.backend.util.QuestionTypeEnum;
 
 @Entity
 @Table(name = Constant.QUESTION)
-public class Question implements Serializable {
+public class Question {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Integer question_id;
 	private String answer;
 	private String question;
 	private QuestionTypeEnum type;
 
-	private static final long serialVersionUID = Constant.ONE_LONG;
-
-	public Integer getId() {
-		return id;
+	public Integer getQuestion_id() {
+		return question_id;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setQuestion_id(Integer question_id) {
+		this.question_id = question_id;
 	}
 
 	public String getAnswer() {

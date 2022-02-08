@@ -1,9 +1,11 @@
 package com.backend.dao;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import com.backend.model.Question;
 
-public interface QuestionDAO extends CrudRepository<Question, Integer> {
+@Repository
+public interface QuestionDAO extends JpaRepository<Question, Integer> {
 
 }

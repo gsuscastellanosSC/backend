@@ -1,5 +1,6 @@
 package com.backend.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,6 +38,22 @@ public class QuestionController {
 	}
 
 	@GetMapping(Constant.SLASH_QUESTIONS_SLASH_BRACKET_ID_BRACKET)
+	public List<Question> findById(@PathVariable Integer id) {
+
+		List<Question> questions = questionService.findAll();
+		List<Question> questionAns = new ArrayList<Question>();
+
+		for (Question question : questions) {
+			if (id.equals(question.getQuestion_id())) {
+				questionAns.add(question);
+			}
+		}
+
+		return questionAns;
+
+	}
+
+	@PutMapping(Constant.SLASH_QUESTIONS_SLASH_BRACKET_ID_BRACKET)
 	public Question update(@RequestBody Question question, @PathVariable Integer id) {
 
 		Question questionUpdated = questionService.findById(id);

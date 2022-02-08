@@ -1,46 +1,43 @@
 package com.backend.model;
 
-import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-
 import com.backend.util.Constant;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = Constant.POLL)
-public class Poll implements Serializable {
+public class Poll {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Integer poll_id;
 	private String name;
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
-	@JoinColumn(name = Constant.QUESTION + Constant.ID)
-	private Question question;
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "poll_question", joinColumns = { @JoinColumn(name = "poll_id") }, inverseJoinColumns = {
+			@JoinColumn(name = "question_id") })
+	private List<Question> question = new ArrayList<>();
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
-	@JoinColumn(name = Constant.CLIENT + Constant.ID)
-	private Client client;
+	public Poll() {
 
-	private static final long serialVersionUID = Constant.ONE_LONG;
-
-	public Integer getId() {
-		return id;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public Integer getPoll_id() {
+		return poll_id;
+	}
+
+	public void setPoll_id(Integer poll_id) {
+		this.poll_id = poll_id;
 	}
 
 	public String getName() {
@@ -51,20 +48,12 @@ public class Poll implements Serializable {
 		this.name = name;
 	}
 
-	public Question getQuestion() {
+	public List<Question> getQuestion() {
 		return question;
 	}
 
-	public void setQuestion(Question question) {
+	public void setQuestion(List<Question> question) {
 		this.question = question;
-	}
-
-	public Client getClient() {
-		return client;
-	}
-
-	public void setClient(Client client) {
-		this.client = client;
 	}
 
 }
